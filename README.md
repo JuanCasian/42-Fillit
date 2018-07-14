@@ -10,4 +10,4 @@ Content to be edited when done
 
 Juan Pedro Casian @JuanCasian
 
-Shinya Yamada @Yatty1
+Shinya Yamada @Github/Yatty1
