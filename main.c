@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 16:13:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 16:16:15 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/14 16:36:59 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		ft_putendl("usage");
+		ft_putendl("usage: ./fillit path_to_map_file");
 	}
 	return (0);
 }
