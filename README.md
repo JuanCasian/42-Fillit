@@ -8,6 +8,6 @@ Content to be edited when done
 
 ## Authors
 
-Juan Pedro Casian @JuanCasian
+Juan Pedro Casian - [@JuanCasian](https://github.com/JuanCasian)
 
-Shinya Yamada @Github/Yatty1
+Shinya Yamada - [@Yatty1](https://github.com/Yatty1)
