@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_remalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 16:13:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 18:54:08 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/14 20:34:42 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/14 21:32:56 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "fillit.h"
 
-int	main(int argc, char **argv)
+void	*ft_remalloc(void *ptr, size_t size, size_t curr)
 {
-	int		fd;
+	void	*newptr;
 
-	if (argc == 2)
-	{
-		if ((fd = open(argv[1], O_RDONLY)) == -1)
-		{
-			ft_putendl_fd("Incorrect file path", 2);
-			return (-1);
-		}
-		else
-			fillit(fd);
-	}
-	else
-		ft_putendl("usage: ./fillit path_to_map_file");
-	return (0);
+	if (!(newptr = (void*)malloc(size)))
+		return (NULL);
+	newptr = ft_memcpy(newptr, ptr, curr);
+	free(ptr);
+	return (newptr);
 }
