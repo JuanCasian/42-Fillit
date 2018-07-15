@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 16:13:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 18:36:10 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/14 18:48:21 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	{
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
 		{
-			ft_putendl("Incorrect file path");
+			ft_putendl_fd("Incorrect file path", 2);
 			return (-1);
 		}
 	}
