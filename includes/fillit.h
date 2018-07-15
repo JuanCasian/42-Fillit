@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 16:13:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 18:36:10 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/14 18:35:44 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "fillit.h"
+#ifndef FILLIT_H
+# define FILLIT_H
 
-int	main(int argc, char **argv)
-{
-	int		fd;
+#include <fcntl.h>
 
-	if (argc == 2)
-	{
-		if ((fd = open(argv[1], O_RDONLY)) == -1)
-		{
-			ft_putendl("Incorrect file path");
-			return (-1);
-		}
-	}
-	else
-		ft_putendl("usage: ./fillit path_to_map_file");
-	return (0);
-}
+#endif
