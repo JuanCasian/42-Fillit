@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 16:13:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 18:27:04 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/14 19:01:55 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		ft_putendl("Correct input");
+		ft_putendl(argv[1]);
 	}
 	else
 	{
