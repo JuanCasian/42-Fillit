@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_sqrtint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 16:13:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 13:24:17 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/15 13:02:46 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/15 13:20:11 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-int	main(int argc, char **argv)
+int	ft_sqrtint(int number)
 {
-	int		fd;
+	int ret;
+	int tmp;
 
-	if (argc == 3)
+	ret = 0;
+	tmp = 0;
+	if (number == 1 || number == 0)
+		return (0);
+	while (tmp < number)
 	{
-		if ((fd = open(argv[1], O_RDONLY)) == -1)
-		{
-			ft_putendl_fd("Incorrect file path", 2);
-			return (-1);
-		}
-		else
-		{
-			fillit(fd);
-		}
+		ret++;
+		tmp = ret * ret;
 	}
-	else
-		ft_putendl("usage: ./fillit path_to_map_file");
-	return (0);
+	return (ret);
 }
