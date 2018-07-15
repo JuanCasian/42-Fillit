@@ -6,7 +6,7 @@
 #    By: syamada <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/14 15:53:25 by syamada           #+#    #+#              #
-#    Updated: 2018/07/14 21:32:24 by syamada          ###   ########.fr        #
+#    Updated: 2018/07/14 21:37:17 by syamada          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME	:= fillit
 SRCSDIR	:= srcs
 INCSDIR	:= includes
 LIBSDIR	:= libs
-SRCS	:= main.c fillit.c ft_remalloc.c read_input.c
+SRCS	:= main.c validate_input.c ft_remalloc.c fillit.c read_input.c
 HEADERS	:= $(wildcard $(INCSDIR)/*.h)
 OBJECTS	:= $(patsubst %.c, %.o, $(SRCS))
 # I could have written like this: $(SRCS:.c=.o)
