@@ -21,6 +21,7 @@ void	fillit(int fd);
 char	*ft_filetostr(int fd);
 void	read_input(int fd);
 void	*ft_remalloc(void *ptr, size_t size, size_t curr);
+char	***cvt_threedim(char *input, int n_blocks);
 int		ft_sqrtint(int number);
 
 #endif
