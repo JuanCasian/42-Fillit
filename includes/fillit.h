@@ -18,7 +18,7 @@
 
 int		validate_input(char *str);
 void	fillit(int fd);
-char	*input_tostr(int fd);
+char	*ft_filetostr(int fd);
 void	read_input(int fd);
 void	*ft_remalloc(void *ptr, size_t size, size_t curr);
 

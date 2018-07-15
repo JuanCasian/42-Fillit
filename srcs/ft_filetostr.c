@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_input.c                                       :+:      :+:    :+:   */
+/*   ft_filetostr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 21:10:18 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/15 12:47:16 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/15 12:47:18 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-void	read_input(int fd)
+char	*ft_filetostr(int fd)
 {
-	char	*input_str;
+	char	buf[BUFSIZE];
+	int		n;
+	char	*str;
+	size_t	len;
 
-	input_str = ft_filetostr(fd);
-	ft_putendl(input_str);
+	len = 0;
+	str = NULL;
+	while ((n = read(fd, buf, BUFSIZE)))
+	{
+		if (n < 0)
+		{
+			ft_putendl_fd("Error reading file", 2);
+			exit(EXIT_FAILURE);
+		}
+		str = (char*)ft_remalloc((void*)str, len + n + 1, len);
+		str = (char*)ft_memcpy(str + len, buf, n);
+		len += n;
+		str[len] = '\0';
+	}
+	return (str);
 }
