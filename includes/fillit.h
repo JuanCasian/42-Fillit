@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 13:21:23 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/15 15:15:08 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define	BUFSIZE 4096
 # include <fcntl.h>
 
-int		validate_input(char *str);
+int		num_of_square(char *str);
 void	fillit(int fd);
 char	*ft_filetostr(int fd);
 void	read_input(int fd);
