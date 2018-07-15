@@ -6,11 +6,12 @@
 /*   By: syamada <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 19:51:41 by syamada           #+#    #+#             */
-/*   Updated: 2018/07/14 21:09:06 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/14 21:58:57 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "fillit.h"
 
 static char	*is_square(char *str)
 {
@@ -36,17 +37,11 @@ static char	*is_square(char *str)
 
 int			validate_input(char	*str)
 {
-	int		block;
-
-	block = 0;
 	while (*str)
 	{
 		if (!(str = is_square(str)))
 			return (0);
-		block++;
 		str++;
 	}
-	if (block != 4)
-		return (0);
 	return (1);
 }
