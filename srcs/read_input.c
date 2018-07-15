@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read_input.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 16:13:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 18:54:08 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/14 21:10:18 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-int	main(int argc, char **argv)
+char	*input_tostr(int fd)
 {
-	int		fd;
+	char	buf[BUFSIZE];
+	int		n;
+	char	*str;
+	size_t	len;
 
-	if (argc == 2)
+	len = 0;
+	str = NULL;
+	while ((n = read(fd, buf, BUFSIZE)))
 	{
-		if ((fd = open(argv[1], O_RDONLY)) == -1)
+		if (n < 0)
 		{
-			ft_putendl_fd("Incorrect file path", 2);
-			return (-1);
+			ft_putendl_fd("error", 2);
+			exit (EXIT_FAILURE);
 		}
-		else
-			fillit(fd);
+		str = (char*)ft_remalloc((void*)str, len + n + 1, len);
+		str = (char*)ft_memcpy(str + len, buf, n);
+		len += n;
+		str[len] = '\0';
 	}
-	else
-		ft_putendl("usage: ./fillit path_to_map_file");
-	return (0);
+	return (str);
+}
+
+void	read_input(int fd)
+{
+	char	*input_str;
+
+	input_str = input_tostr(fd);
+	ft_putendl(input_str);
 }

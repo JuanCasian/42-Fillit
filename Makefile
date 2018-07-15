@@ -6,7 +6,7 @@
 #    By: syamada <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/14 15:53:25 by syamada           #+#    #+#              #
-#    Updated: 2018/07/14 18:39:38 by jcasian          ###   ########.fr        #
+#    Updated: 2018/07/14 21:08:55 by jcasian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME	:= fillit
 SRCSDIR	:= srcs
 INCSDIR	:= includes
 LIBSDIR	:= libs
-SRCS	:= main.c
+SRCS	:= main.c fillit.c ft_remalloc.c read_input.c
 HEADERS	:= $(wildcard $(INCSDIR)/*.h)
 OBJECTS	:= $(SRCS:.c=.o)
 
