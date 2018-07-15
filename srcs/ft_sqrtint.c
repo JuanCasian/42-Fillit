@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_input.c                                       :+:      :+:    :+:   */
+/*   ft_sqrtint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 21:10:18 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/15 13:02:46 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/15 13:20:11 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-void	read_input(int fd)
+int	ft_sqrtint(int number)
 {
-	char	*input_str;
+	int ret;
+	int tmp;
 
-	input_str = ft_filetostr(fd);
-	ft_putendl(input_str);
+	ret = 0;
+	tmp = 0;
+	if (number == 1 || number == 0)
+		return (0);
+	while (tmp < number)
+	{
+		ret++;
+		tmp = ret * ret;
+	}
+	return (ret);
 }

@@ -6,7 +6,7 @@
 #    By: syamada <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/14 15:53:25 by syamada           #+#    #+#              #
-#    Updated: 2018/07/15 15:08:16 by syamada          ###   ########.fr        #
+#    Updated: 2018/07/15 15:18:41 by syamada          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ NAME	:= fillit
 SRCSDIR	:= srcs
 INCSDIR	:= includes
 LIBSDIR	:= libs
-SRCS	:= main.c num_of_square.c ft_remalloc.c fillit.c read_input.c
+SRCS	:= $(addprefix $(SRCSDIR)/,\
+	main.c num_of_square.c ft_remalloc.c fillit.c read_input.c ft_filetostr.c \
+	ft_sqrtint.c)
 HEADERS	:= $(wildcard $(INCSDIR)/*.h)
 OBJECTS	:= $(patsubst %.c, %.o, $(SRCS))
 # I could have written like this: $(SRCS:.c=.o)
@@ -31,8 +33,8 @@ all: $(NAME)
 # $^ is right side of the :
 # % is the same with wildcard
 #this rule says .o files have dependencies on .c files which means this rule will be exected before whenever object files is used.
-%.o: $(addprefix $(SRCSDIR)/,%.c)
-	$(CC) -c $(CFLAGS) $< -I$(INCSDIR) -o $@
+%.o: %.c
+	$(CC) -c $(CFLAGS) -I$(INCSDIR) $< -o $@
 
 $(NAME): $(OBJECTS)
 	$(CC) -o $@ $^ -L$(LIBSDIR) -lft
