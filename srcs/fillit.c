@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   fillit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 21:05:30 by syamada          ###   ########.fr       */
+/*   Created: 2018/07/14 18:54:24 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/14 19:49:32 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
+#include "libft.h"
+#include "fillit.h"
 
-# define	BUFSIZE 4096
-# include <fcntl.h>
-
-int		validate_input(char *str);
-void	fillit(int fd);
-char	*input_tostr(int fd);
-void	read_input(int fd);
-void	*ft_remalloc(void *ptr, size_t size, size_t curr);
-
-#endif
+void	fillit(int fd)
+{
+	read_input(fd);
+}

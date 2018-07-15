@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.h                                           :+:      :+:    :+:   */
+/*   ft_remalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/14 21:05:30 by syamada          ###   ########.fr       */
+/*   Created: 2018/07/14 20:34:42 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/14 21:32:56 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLIT_H
-# define FILLIT_H
+#include "libft.h"
 
-# define	BUFSIZE 4096
-# include <fcntl.h>
+void	*ft_remalloc(void *ptr, size_t size, size_t curr)
+{
+	void	*newptr;
 
-int		validate_input(char *str);
-void	fillit(int fd);
-char	*input_tostr(int fd);
-void	read_input(int fd);
-void	*ft_remalloc(void *ptr, size_t size, size_t curr);
-
-#endif
+	if (!(newptr = (void*)malloc(size)))
+		return (NULL);
+	newptr = ft_memcpy(newptr, ptr, curr);
+	free(ptr);
+	return (newptr);
+}
