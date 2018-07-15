@@ -6,47 +6,45 @@
 /*   By: syamada <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 19:51:41 by syamada           #+#    #+#             */
-/*   Updated: 2018/07/14 21:09:06 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/15 15:11:22 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "fillit.h"
 
-static char	*is_square(char *str)
+static char	*is_validsquare(char *str)
 {
-	int		i;
+	int		row;
 	int		line;
 
 	line = 0;
-	while (line != 4)
+	while (line++ != 4)
 	{
-		i = 0;
+		row = 0;
 		while (*str != '\n')
 		{
-			i++;
+			row++;
 			str++;
 		}
-		if (i != 4)
+		if (row != 4)
 			return (NULL);
-		line++;
 		str++;
 	}
 	return (str);
 }
 
-int			validate_input(char	*str)
+int			num_of_square(char	*str)
 {
-	int		block;
+	int		count;
 
-	block = 0;
+	count = 0;
 	while (*str)
 	{
-		if (!(str = is_square(str)))
+		if (!(str = is_validsquare(str)))
 			return (0);
-		block++;
+		count++;
 		str++;
 	}
-	if (block != 4)
-		return (0);
-	return (1);
+	return (count);
 }
