@@ -18,7 +18,7 @@ SRCSDIR	:= srcs
 INCSDIR	:= includes
 LIBSDIR	:= libs
 SRCS	:= $(addprefix $(SRCSDIR)/,\
-	main.c validate_input.c ft_remalloc.c fillit.c read_input.c)
+	main.c validate_input.c ft_remalloc.c fillit.c read_input.c ft_filetostr.c)
 HEADERS	:= $(wildcard $(INCSDIR)/*.h)
 OBJECTS	:= $(patsubst %.c, %.o, $(SRCS))
 # I could have written like this: $(SRCS:.c=.o)
