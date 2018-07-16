@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 20:17:10 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 21:45:31 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/15 22:26:32 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static int	*init_pieces(void)
 
 static int	check_piece(char **str)
 {
-	pos	curr;
-	int	*pieces;
-	int res;
-	int i;
+	t_pos	curr;
+	int		*pieces;
+	int		res;
+	int		i;
 
 	curr.y = -1;
 	i = 0;
@@ -52,10 +52,10 @@ static int	check_piece(char **str)
 	}
 	if ((res = pieces[0] + pieces[1] + pieces[2] + pieces[3]) < 6)
 		return (0);
-	return(1);
+	return (1);
 }
 
-int	second_validation(char ***str, int n_pieces)
+int			second_validation(char ***str, int n_pieces)
 {
 	int	valid_pieces;
 	int curr_piece;

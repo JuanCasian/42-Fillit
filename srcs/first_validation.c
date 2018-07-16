@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 18:09:50 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 20:10:56 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/15 22:28:05 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static int	check_box(char **str)
 static int	validate_format(char *str)
 {
 	int n_blocks;
-	
+
 	n_blocks = 0;
 	if (!str)
 		return (0);
@@ -78,7 +78,7 @@ static int	validate_format(char *str)
 			return (n_blocks);
 		if (*str == '\n')
 		{
-			if ((str[1] != '.' && str[1] != '#' ) || !(str[1]))
+			if ((str[1] != '.' && str[1] != '#') || !(str[1]))
 				return (0);
 			else
 				str += 1;
@@ -86,7 +86,6 @@ static int	validate_format(char *str)
 	}
 	return (0);
 }
-
 
 int			first_validation(char *str)
 {
