@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 22:33:40 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/16 14:51:11 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct	s_tetrispieces
 int				first_validation(char *str);
 void			fillit(int fd);
 char			*ft_filetostr(int fd);
-void			read_input(int fd);
+t_tetri			*read_input(int fd);
 void			*ft_remalloc(void *ptr, size_t size, size_t curr);
 char			***cvt_threedim(char *input, int n_blocks);
 int				ft_sqrtint(int number);
@@ -46,5 +46,7 @@ int				check_left(t_pos curr, char **str);
 int				check_right(t_pos curr, char **str);
 int				check_up(t_pos curr, char **str);
 int				check_down(t_pos curr, char **str);
+void			print_board(char **board);
+char			**create_board(int size);
 
 #endif
