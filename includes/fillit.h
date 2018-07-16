@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 17:24:30 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/15 18:11:23 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,13 @@
 # include <fcntl.h>
 #include <stdio.h>
 
-int		num_of_square(char *str);
+typedef struct	position
+{
+	int			x;
+	int			y;
+}				pos;
+
+int		first_validation(char *str);
 void	fillit(int fd);
 char	*ft_filetostr(int fd);
 void	read_input(int fd);
