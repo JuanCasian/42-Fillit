@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 17:41:50 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/15 18:08:59 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	read_input(int fd)
 	char	***str;
 
 	input_str = ft_filetostr(fd);
-	if (!(n_blocks = num_of_square(input_str)))
+	if (!(n_blocks = first_validation(input_str)))
 	{
 		ft_putendl_fd("error", 2);
 		exit(EXIT_FAILURE);
