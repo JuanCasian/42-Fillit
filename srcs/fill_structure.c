@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_input.c                                       :+:      :+:    :+:   */
+/*   fill_structure.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 17:40:24 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/15 17:41:12 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/15 17:59:21 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-void	read_input(int fd)
+static pos	*get_positions(char **dstr)
 {
-	char	*input_str;
-	int		n_blocks;
-	char	***str;
-	tetri	*tetris;
+	pos		pieces[4];
 
-	input_str = ft_filetostr(fd);
-	if (!(n_blocks = num_of_square(input_str)))
-		put_error();
-	if (!(str = cvt_threedim(input_str, n_blocks)))
-		put_error();
-	if (!(tetris = fill_structure(str, n_blocks)))
-		put_error();
+}
+
+tetri		*fill_structure(char ***tstr, int n_blocks)
+{
+	tetri	*res;
+	int		i;
+
+	i = 0;
+	if (!(res = (tetri*)malloc(sizeof(tetri) * n_blocks + 1)))
+		return (NULL);
+	while (i < n_blocks)
+	{
+		res[i]->pieces = get_positions(tstr[i]);
+	}
 }
