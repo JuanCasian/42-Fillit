@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 16:13:02 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 13:24:17 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/15 18:43:29 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 {
 	int		fd;
 
-	if (argc == 3)
+	if (argc == 2)
 	{
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
 		{
