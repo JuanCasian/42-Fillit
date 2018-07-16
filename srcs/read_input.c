@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 19:05:25 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/15 22:13:17 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,4 @@ void	read_input(int fd)
 		put_error();
 	if (!(tetris = fill_structure(str, n_blocks)))
 		put_error();
-	int i = 0;
-	int	j = 0;
-	while (tetris[i].is_end != 1)
-	{
-		j = 0;
-		while (j < 4)
-		{
-			printf("x: %d\n", tetris[i].pieces[j].x);
-			printf("y: %d\n", tetris[i].pieces[j].y);
-			j++;
-		}
-		printf("name: %c\n", tetris[i].name);
-		i++;
-	}
 }
