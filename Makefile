@@ -6,7 +6,7 @@
 #    By: syamada <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/14 15:53:25 by syamada           #+#    #+#              #
-#    Updated: 2018/07/15 18:23:56 by jcasian          ###   ########.fr        #
+#    Updated: 2018/07/15 20:55:58 by jcasian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ INCSDIR	:= includes
 LIBSDIR	:= libs
 SRCS	:= $(addprefix $(SRCSDIR)/,\
 	main.c ft_remalloc.c fillit.c read_input.c ft_filetostr.c \
-	ft_sqrtint.c cvt_threedim.c first_validation.c put_error.c)
+	ft_sqrtint.c cvt_threedim.c first_validation.c put_error.c \
+	second_validation.c check_conections.c)
 HEADERS	:= $(wildcard $(INCSDIR)/*.h)
 OBJECTS	:= $(patsubst %.c, %.o, $(SRCS))
 # I could have written like this: $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 18:32:38 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/15 21:46:14 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,10 @@ void	read_input(int fd)
 
 	input_str = ft_filetostr(fd);
 	if (!(n_blocks = first_validation(input_str)))
-	{
-		ft_putendl("First validation failed");
-		exit(1);
-	}
-	ft_putstr("Number of blocks counted: ");
-	ft_putnbr(n_blocks);
-	ft_putchar('\n');
+		put_error();
 	if (!(str = cvt_threedim(input_str, n_blocks)))
+		put_error();
+	if (!(second_validation(str, n_blocks)))
 		put_error();
 /*
 	if (!(tetris = fill_structure(str, n_blocks)))

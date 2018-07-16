@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 18:16:24 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/15 20:56:37 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ char			***cvt_threedim(char *input, int n_blocks);
 int				ft_sqrtint(int number);
 void			put_error(void);
 tetri			*fill_structure(char ***tstr, int n_blocks);
+int				second_validation(char ***str, int n_pieces);
+int				check_conections(pos curr, char **str);
 
 #endif
