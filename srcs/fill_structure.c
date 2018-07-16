@@ -6,37 +6,61 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 17:41:12 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 19:04:58 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/15 22:04:16 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
+static t_pos	*init_pos(t_pos *pieces)
+{
+	pieces[0].x = 0;
+	pieces[0].y = 0;
+	return (pieces);
+}
+
+static t_pos	*set_prepos(int x, int y)
+{
+	t_pos	*pre;
+
+	pre = (t_pos *)malloc(sizeof(t_pos));
+	pre->x = x;
+	pre->y = y;
+	return (pre);
+}
+
+static void		set_pos(int x, int y, t_pos *pre, t_pos *piece)
+{
+	piece->x = x - pre->x;
+	piece->y = y - pre->y;
+}
+
 static t_pos	*get_positions(char **dstr)
 {
 	t_pos	*pieces;
+	t_pos	*pre;
 	int		i;
-	int		j;
-	int		k;
+	int		x;
+	int		y;
 
-	i = 0;
-	j = 0;
+	i = 1;
+	y = 0;
+	pre = NULL;
 	pieces = (t_pos *)malloc(sizeof(t_pos) * 4);
-	while (dstr[j])
+	pieces = init_pos(pieces);
+	while (dstr[y])
 	{
-		k = 0;
-		while (dstr[j][k])
+		x = 0;
+		while (dstr[y][x])
 		{
-			if (dstr[j][k] == '#')
-			{
-				pieces[i].x = k;
-				pieces[i].y = j;
-				i++;
-			}
-			k++;
+			if (dstr[y][x] == '#' && !pre)
+				pre = set_prepos(x, y);
+			else if (dstr[y][x] == '#')
+				set_pos(x, y, pre, &pieces[i++]);
+			x++;
 		}
-		j++;
+		y++;
 	}
 	return (pieces);
 }
