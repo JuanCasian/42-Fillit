@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/15 15:45:03 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 18:16:05 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/15 22:20:17 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static char	*ft_strndup(char *str, int len)
 		res[i] = str[i];
 		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }
 

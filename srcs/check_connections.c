@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_input.c                                       :+:      :+:    :+:   */
+/*   check_conections.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 22:39:40 by syamada          ###   ########.fr       */
+/*   Created: 2018/07/15 20:54:00 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/15 22:38:49 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-void	read_input(int fd)
+int			check_conections(t_pos curr, char **str)
 {
-	char	*input_str;
-	int		n_blocks;
-	char	***str;
-	t_tetri	*tetris;
+	int n_conections;
 
-	input_str = ft_filetostr(fd);
-	if (!(n_blocks = first_validation(input_str)))
-		put_error();
-	if (!(str = cvt_threedim(input_str, n_blocks)))
-		put_error();
-	if (!(second_validation(str, n_blocks)))
-		put_error();
-	if (!(tetris = fill_structure(str, n_blocks)))
-		put_error();
+	n_conections = 0;
+	n_conections += check_up(curr, str);
+	n_conections += check_down(curr, str);
+	n_conections += check_right(curr, str);
+	n_conections += check_left(curr, str);
+	return (n_conections);
 }
