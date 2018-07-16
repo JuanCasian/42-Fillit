@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.c                                           :+:      :+:    :+:   */
+/*   put_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/14 18:54:24 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 18:25:23 by jcasian          ###   ########.fr       */
+/*   Created: 2018/07/15 17:37:21 by jcasian           #+#    #+#             */
+/*   Updated: 2018/07/15 17:38:25 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-void	fillit(int fd)
+void	put_error(void)
 {
-	read_input(fd);
+	ft_putendl_fd("error", 2);
+	exit(EXIT_FAILURE);
 }

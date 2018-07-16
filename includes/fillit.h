@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/15 18:11:23 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/15 18:16:24 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,20 @@ typedef struct	position
 	int			y;
 }				pos;
 
-int		first_validation(char *str);
-void	fillit(int fd);
-char	*ft_filetostr(int fd);
-void	read_input(int fd);
-void	*ft_remalloc(void *ptr, size_t size, size_t curr);
-char	***cvt_threedim(char *input, int n_blocks);
-int		ft_sqrtint(int number);
-int		validate_input(char ***str);
+typedef struct	tetrispieces
+{
+	pos			pieces[4];
+	char		name;
+}				tetri;
+
+int				first_validation(char *str);
+void			fillit(int fd);
+char			*ft_filetostr(int fd);
+void			read_input(int fd);
+void			*ft_remalloc(void *ptr, size_t size, size_t curr);
+char			***cvt_threedim(char *input, int n_blocks);
+int				ft_sqrtint(int number);
+void			put_error(void);
+tetri			*fill_structure(char ***tstr, int n_blocks);
 
 #endif
