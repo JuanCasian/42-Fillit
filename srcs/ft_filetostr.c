@@ -19,9 +19,11 @@ char	*ft_filetostr(int fd)
 	int		n;
 	char	*str;
 	size_t	len;
+	int	flag;
 
 	len = 0;
 	str = NULL;
+	flag = 0;
 	while ((n = read(fd, buf, BUFSIZE)))
 	{
 		if (n < 0)
@@ -29,7 +31,10 @@ char	*ft_filetostr(int fd)
 		str = (char*)ft_remalloc((void*)str, len + n + 1, len);
 		str = (char*)ft_memcpy(str + len, buf, n);
 		len += n;
+		flag++;
 		str[len] = '\0';
 	}
+	if (!(flag))
+		put_error();
 	return (str);
 }
