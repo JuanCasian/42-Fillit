@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 19:35:09 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/16 13:19:34 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/17 16:55:15 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ t_tetri	*read_input(int fd)
 
 	input_str = ft_filetostr(fd);
 	if (!(n_blocks = first_validation(input_str)))
+		put_error();
+	if (n_blocks > 26)
 		put_error();
 	if (!(str = cvt_threedim(input_str, n_blocks)))
 		put_error();
