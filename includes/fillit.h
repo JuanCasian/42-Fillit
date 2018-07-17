@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/16 14:51:11 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/16 18:50:27 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ int				check_up(t_pos curr, char **str);
 int				check_down(t_pos curr, char **str);
 void			print_board(char **board);
 char			**create_board(int size);
+char			**solve(char **board, int boardsize, t_tetri *tetris);
 
 #endif

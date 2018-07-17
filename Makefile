@@ -6,7 +6,7 @@
 #    By: syamada <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/14 15:53:25 by syamada           #+#    #+#              #
-#    Updated: 2018/07/16 14:46:42 by jcasian          ###   ########.fr        #
+#    Updated: 2018/07/16 19:21:54 by jcasian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS	:= $(addprefix $(SRCSDIR)/,\
 	main.c ft_remalloc.c fillit.c read_input.c ft_filetostr.c \
 	ft_sqrtint.c cvt_threedim.c first_validation.c put_error.c \
 	second_validation.c check_connections.c check_connection_helpers.c fill_structure.c \
-	print_board.c create_board.c)
+	print_board.c create_board.c solve.c)
 HEADERS	:= $(wildcard $(INCSDIR)/*.h)
 OBJECTS	:= $(patsubst %.c, %.o, $(SRCS))
 # I could have written like this: $(SRCS:.c=.o)
