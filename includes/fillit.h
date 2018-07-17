@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:34:58 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/16 18:50:27 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/16 21:18:34 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,9 @@ int				check_down(t_pos curr, char **str);
 void			print_board(char **board);
 char			**create_board(int size);
 char			**solve(char **board, int boardsize, t_tetri *tetris);
+t_pos			check_fornextspace(char **board, t_tetri currt, int boardsize);
+t_pos			get_absloc(t_pos master, t_pos res);
+char			**add_piece(t_tetri tetra, char **board);
+char			**remove_piece(t_tetri tetra, char **board, int *curr);
 
 #endif

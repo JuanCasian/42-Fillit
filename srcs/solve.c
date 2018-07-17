@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 18:44:44 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/16 19:21:20 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/16 21:18:36 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	**solve(char **board, int boardsize, t_tetri *tetris)
 	curr = 0;
 	while (1)
 	{
-		next_pos = check_fornextspace(board, tetris[curr]);
+		next_pos = check_fornextspace(board, tetris[curr], boardsize);
 		if (next_pos.y == -1)
 			if (tetris[curr].name == 'A')
 			{
@@ -34,7 +34,7 @@ char	**solve(char **board, int boardsize, t_tetri *tetris)
 		else
 		{
 			tetris[curr].pieces[0] = next_pos;
-			board = put_pieceonboard(tetris[curr++], board);
+			board = add_piece(tetris[curr++], board);
 			if (tetris[curr].is_end == 1)
 				return (board);
 		}
