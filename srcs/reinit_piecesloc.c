@@ -27,3 +27,18 @@ void	reinit_piecesloc(t_tetri **tetris)
 		i++;
 	}
 }
+
+void	reinit_npiecesloc(t_tetri **tetris, int start)
+{
+	int		i;
+	t_tetri	*tr;
+
+	 i = start + 1;
+	 tr = *tetris;
+	while (tr[i].is_end != 1)
+	{
+		tr[i].pieces[0].x = -1;
+		tr[i].pieces[0].y = 0;
+		i++;
+	}
+}

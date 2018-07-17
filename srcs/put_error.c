@@ -15,6 +15,6 @@
 
 void	put_error(void)
 {
-	ft_putendl_fd("error", 2);
+	ft_putendl("error");
 	exit(EXIT_FAILURE);
 }

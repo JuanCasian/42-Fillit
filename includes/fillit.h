@@ -54,5 +54,6 @@ t_pos			get_absloc(t_pos master, t_pos res);
 char			**add_piece(t_tetri tetra, char **board);
 char			**remove_piece(t_tetri tetra, char **board, int *curr);
 void			reinit_piecesloc(t_tetri **tetri);
+void			reinit_npiecesloc(t_tetri **tetris, int start);
 
 #endif

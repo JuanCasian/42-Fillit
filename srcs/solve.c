@@ -30,7 +30,10 @@ char	**solve(char **board, int boardsize, t_tetri *tetris)
 				curr = 0;
 			}
 			else
+			{
 				board = remove_piece(tetris[curr - 1], board, &curr);
+				reinit_npiecesloc(&tetris, curr);
+			}
 		else
 		{
 			tetris[curr].pieces[0] = next_pos;
@@ -38,8 +41,6 @@ char	**solve(char **board, int boardsize, t_tetri *tetris)
 			if (tetris[curr].is_end == 1)
 				return (board);
 		}
-		print_board(board);
-		ft_putchar('\n');
 	}
 	return (NULL);
 }
