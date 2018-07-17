@@ -6,7 +6,7 @@
 /*   By: syamada <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 20:12:54 by syamada           #+#    #+#             */
-/*   Updated: 2018/07/16 20:19:20 by syamada          ###   ########.fr       */
+/*   Updated: 2018/07/16 20:59:15 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 void	reinit_piecesloc(t_tetri **tetris)
 {
 	int		i;
+	t_tetri	*tr;
 
 	 i = 0;
-	while (tetris[i]->is_end != 1)
+	 tr = *tetris;
+	while (tr[i].is_end != 1)
 	{
-		tetris[i]->pieces[0].x = -1;
-		tetris[i]->pieces[0].y = 0;
+		tr[i].pieces[0].x = -1;
+		tr[i].pieces[0].y = 0;
 		i++;
 	}
 }
