@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 13:29:01 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/16 14:51:13 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/16 20:22:41 by syamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ char	**create_board(int size)
 	int		j;
 
 	i = 0;
-	if (!(res = (char**)malloc(sizeof(char*) * size + 1)))
+	if (!(res = (char**)malloc(sizeof(char*) * (size + 1))))
 		put_error();
 	while (i < size)
 	{
-		if (!(res[i] = (char*)malloc(sizeof(char) * size + 1)))
+		if (!(res[i] = (char*)malloc(sizeof(char) * (size + 1))))
 			put_error();
 		j = 0;
 		while (j < size)
