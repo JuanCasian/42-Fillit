@@ -83,6 +83,8 @@ static int	validate_format(char *str)
 			else
 				str += 1;
 		}
+		else
+			put_error();
 	}
 	return (0);
 }
