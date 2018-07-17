@@ -25,10 +25,7 @@ char	*ft_filetostr(int fd)
 	while ((n = read(fd, buf, BUFSIZE)))
 	{
 		if (n < 0)
-		{
-			ft_putendl_fd("Error reading file", 2);
-			exit(EXIT_FAILURE);
-		}
+			put_error();
 		str = (char*)ft_remalloc((void*)str, len + n + 1, len);
 		str = (char*)ft_memcpy(str + len, buf, n);
 		len += n;

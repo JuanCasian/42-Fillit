@@ -20,10 +20,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if ((fd = open(argv[1], O_RDONLY)) == -1)
-		{
-			ft_putendl_fd("Incorrect file path", 2);
-			return (-1);
-		}
+			put_error();
 		else
 		{
 			fillit(fd);
