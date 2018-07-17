@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 19:35:37 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/16 21:18:38 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/16 21:28:37 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,16 @@ t_pos		check_fornextspace(char **board, t_tetri currt, int boardsize)
 	{
 		currt.pieces[0].x = currt.pieces[0].x + 1;
 		if (is_inbound(currt.pieces[0].x, boardsize))
+		{
 			if (check_allpieces(board, currt, boardsize))
 			{
 				final_pos.x = currt.pieces[0].x;
 				final_pos.y = currt.pieces[0].y;
 				return (final_pos);
 			}
+		}
 		else
+		{
 			if (is_inbound(++currt.pieces[0].y, boardsize))
 				currt.pieces[0].x = -1;
 			else
@@ -80,5 +83,6 @@ t_pos		check_fornextspace(char **board, t_tetri currt, int boardsize)
 				final_pos.y = -1;
 				return (final_pos);
 			}
+		}
 	}
 }
