@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 18:44:44 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/16 21:18:36 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/16 21:42:29 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	**solve(char **board, int boardsize, t_tetri *tetris)
 			if (tetris[curr].is_end == 1)
 				return (board);
 		}
+		print_board(board);
+		ft_putchar('\n');
 	}
 	return (NULL);
 }

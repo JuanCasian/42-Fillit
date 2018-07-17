@@ -6,7 +6,7 @@
 /*   By: jcasian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/14 18:54:24 by jcasian           #+#    #+#             */
-/*   Updated: 2018/07/16 16:29:10 by jcasian          ###   ########.fr       */
+/*   Updated: 2018/07/16 21:33:10 by jcasian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ void	fillit(int fd)
 		n_tetris++;
 	boardsize = ft_sqrtint(n_tetris * 4);
 	board = create_board(boardsize);
+	reinit_piecesloc(&tetris);
 	board = solve(board, boardsize, tetris);
+	print_board(board);
 }
